@@ -1,7 +1,7 @@
-package com.abiyyu0003.mobpro1.ui.screen
+package com.abiyyu0003.asessment2mobpro.ui.screen
 
 import androidx.lifecycle.ViewModel
-import com.abiyyu0003.mobpro1.model.Catatan
+import com.abiyyu0003.asessment2mobpro.model.Catatan
 
 class MainViewModel : ViewModel() {
 

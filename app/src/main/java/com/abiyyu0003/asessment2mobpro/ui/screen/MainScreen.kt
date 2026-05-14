@@ -7,8 +7,12 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Divider
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -16,20 +20,37 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.abiyyu0003.mobpro1.model.Catatan
+import com.abiyyu0003.asessment2mobpro.R
+import com.abiyyu0003.asessment2mobpro.model.Catatan
+import com.abiyyu0003.asessment2mobpro.ui.screen.MainViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen() {
+    val context = LocalContext.current
+
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(text = "StudyNotes")
+                    Text(text = stringResource(R.string.app_name))
                 }
             )
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    Toast.makeText(context, R.string.tambah_catatan, Toast.LENGTH_SHORT).show()
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Add,
+                    contentDescription = stringResource(R.string.tombol_tambah)
+                )
+            }
         }
     ) { innerPadding ->
         ScreenContent(Modifier.padding(innerPadding))
@@ -44,7 +65,7 @@ fun ScreenContent(modifier: Modifier = Modifier) {
 
     if (data.isEmpty()) {
         Text(
-            text = "Belum ada catatan",
+            text = stringResource(R.string.data_kosong),
             modifier = modifier.padding(16.dp)
         )
     } else {
@@ -52,11 +73,11 @@ fun ScreenContent(modifier: Modifier = Modifier) {
             modifier = modifier,
             contentPadding = PaddingValues(bottom = 84.dp)
         ) {
-            items(data) {
-                ListItem(catatan = it) {
-                    Toast.makeText(context, it.judul_materi, Toast.LENGTH_SHORT).show()
+            items(data) { catatan ->
+                ListItem(catatan = catatan) {
+                    Toast.makeText(context, catatan.judul_materi, Toast.LENGTH_SHORT).show()
                 }
-                Divider()
+                HorizontalDivider()
             }
         }
     }

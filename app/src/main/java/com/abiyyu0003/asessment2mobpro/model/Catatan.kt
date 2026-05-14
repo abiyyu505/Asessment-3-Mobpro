@@ -1,4 +1,4 @@
-package com.abiyyu0003.mobpro1.model
+package com.abiyyu0003.asessment2mobpro.model
 
 data class Catatan(
     val id: Long,
