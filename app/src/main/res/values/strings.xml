@@ -5,4 +5,9 @@
     <string name="tambah_catatan">Tambah Catatan</string>
     <string name="tombol_tambah">Tambah</string>
 
+    <string name="ubah_catatan">Ubah Catatan</string>
+    <string name="judul_materi">Judul materi</string>
+    <string name="isi_materi">Isi materi</string>
+    <string name="tombol_simpan">Simpan</string>
+    <string name="tombol_kembali">Kembali</string>
 </resources>
