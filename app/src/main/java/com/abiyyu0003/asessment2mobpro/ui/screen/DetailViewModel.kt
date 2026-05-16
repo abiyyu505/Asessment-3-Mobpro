@@ -13,6 +13,10 @@ class DetailViewModel(
     private val dao: CatatanDao
 ) : ViewModel() {
 
+    suspend fun getCatatan(id: Long): Catatan? {
+        return dao.getCatatanById(id)
+    }
+
     fun insert(judul: String, isi: String) {
         val catatan = Catatan(
             judul_materi = judul,

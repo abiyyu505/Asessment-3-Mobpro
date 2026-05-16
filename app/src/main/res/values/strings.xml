@@ -13,8 +13,11 @@
 
     <string name="tombol_hapus">Hapus</string>
     <string name="tombol_batal">Batal</string>
-    <string name="hapus_pesan">Apakah catatan ini ingin dihapus?</string>
+    <string name="hapus_materi">Apakah materi ini ingin dihapus?</string>
 
     <string name="list_view">Tampilan list</string>
     <string name="grid_view">Tampilan grid</string>
+
+    <string name="logo_study_notes">Logo StudyNotes</string>
+    <string name="welcome_text">Mencatat materi jadi lebih rapih dan simple dengan menggunakan StudyNotes:D</string>
 </resources>

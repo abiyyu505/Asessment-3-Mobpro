@@ -14,15 +14,19 @@ fun DisplayAlertDialog(
 ) {
     AlertDialog(
         text = {
-            Text(text = stringResource(R.string.hapus_pesan))
+            Text(text = stringResource(R.string.hapus_materi))
         },
         confirmButton = {
-            TextButton(onClick = onConfirmation) {
+            TextButton(
+                onClick = onConfirmation
+            ) {
                 Text(text = stringResource(R.string.tombol_hapus))
             }
         },
         dismissButton = {
-            TextButton(onClick = onDismissRequest) {
+            TextButton(
+                onClick = onDismissRequest
+            ) {
                 Text(text = stringResource(R.string.tombol_batal))
             }
         },

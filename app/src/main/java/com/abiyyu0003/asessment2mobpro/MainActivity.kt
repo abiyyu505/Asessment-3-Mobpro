@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Asessment2MobproTheme() {
+            Asessment2MobproTheme {
                 SetupNavGraph()
             }
         }
