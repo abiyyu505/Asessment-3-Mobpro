@@ -20,4 +20,9 @@
 
     <string name="logo_study_notes">Logo StudyNotes</string>
     <string name="welcome_text">Mencatat materi jadi lebih rapih dan simple dengan menggunakan StudyNotes:D</string>
+
+    <string name="mode_gelap">Tema gelap</string>
+    <string name="mode_terang">Tema terang</string>
+
+    <string name="profil">Profil</string>
 </resources>

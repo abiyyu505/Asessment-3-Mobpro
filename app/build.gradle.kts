@@ -14,12 +14,16 @@ android {
 
     defaultConfig {
         applicationId = "com.abiyyu0003.asessment2mobpro"
-        minSdk = 27
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField(
+            "String",
+            "API_KEY",
+            "\"${project.findProperty("API_KEY")}\""
+        )
     }
 
     buildTypes {
@@ -37,6 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -53,6 +58,15 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.androidx.compose.material)
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.datastore.preferences)
     testImplementation(libs.junit)

@@ -8,27 +8,33 @@ import com.abiyyu0003.asessment2mobpro.model.Catatan
 
 @Database(
     entities = [Catatan::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class CatatanDb : RoomDatabase() {
 
     abstract val dao: CatatanDao
+
     companion object {
 
         @Volatile
         private var INSTANCE: CatatanDb? = null
 
         fun getInstance(context: Context): CatatanDb {
+
             synchronized(this) {
+
                 var instance = INSTANCE
 
                 if (instance == null) {
+
                     instance = Room.databaseBuilder(
-                        context.applicationContext,
+                        context,
                         CatatanDb::class.java,
                         "catatan.db"
-                    ).build()
+                    )
+                        .fallbackToDestructiveMigration()
+                        .build()
 
                     INSTANCE = instance
                 }

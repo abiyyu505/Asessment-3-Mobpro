@@ -5,9 +5,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "catatan")
 data class Catatan(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long = 0L,
+
+    @PrimaryKey
+    val id: Long,
+
     val judul_materi: String,
+
     val isi_materi: String,
+
     val tanggal: String
 )

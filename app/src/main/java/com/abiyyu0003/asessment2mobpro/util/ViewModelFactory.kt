@@ -12,9 +12,12 @@ class ViewModelFactory(
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
+
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             return MainViewModel(dao) as T
-        } else if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
+        }
+
+        if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
             return DetailViewModel(dao) as T
         }
 
